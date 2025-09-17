@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PunarNirman Trust - Punjab Flood Relief</title>
+    <meta name="description" content="PunarNirman Trust provides emergency relief to flood-affected families in Punjab. Donate now to help provide food, shelter, and hope to those in need.">
+    <meta name="author" content="PunarNirman Trust">
+    <meta name="keywords" content="Punjab flood relief, NGO, disaster relief, donation, emergency help, flood victims">
+    
+    <meta property="og:title" content="PunarNirman Trust - Punjab Flood Relief">
+    <meta property="og:description" content="Help us provide emergency relief to flood-affected families in Punjab. Every donation makes a difference.">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg class="heart-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>PunarNirman Trust</h1>
+                        <p>Punjab Flood Relief</p>
+                    </div>
+                </a>
+
+                <div class="nav-links desktop-nav">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#services" class="nav-link">Our Work</a>
+                    <a href="#team" class="nav-link">Team</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="donate.html" class="donate-btn">Donate Now</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#" class="mobile-nav-link">Home</a>
+                <a href="#services" class="mobile-nav-link">Our Work</a>
+                <a href="#team" class="mobile-nav-link">Team</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+                <a href="donate.html" class="mobile-donate-btn">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Rebuilding Lives, Restoring Hope</h1>
+            <p class="hero-description">
+                In the wake of devastating floods across Punjab, thousands of families have lost everything. 
+                We're on the ground providing immediate relief - food, shelter, medical care, and most importantly, hope for a better tomorrow.
+            </p>
+            <div class="hero-buttons">
+                <a href="donate.html" class="btn-primary">Donate Now</a>
+                <a href="#services" class="btn-secondary">Learn More</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">2,500+</span>
+                    <span class="stat-label">Families Helped</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Villages Reached</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Emergency Support</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Image Carousel -->
+    <section class="carousel-section">
+        <div class="container">
+            <h2 class="section-title">Our Relief Operations in Action</h2>
+            <p class="section-description">
+                Witness the impact of your donations through real stories from the ground. 
+                Every image represents lives touched, hope restored, and communities rebuilding together.
+            </p>
+            
+            <div class="carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slides" id="carouselSlides">
+                        <div class="carousel-slide active">
+                            <img src="src/assets/food-distribution.jpg" alt="Emergency Food Distribution">
+                            <div class="slide-overlay">
+                                <h3>Emergency Food Distribution</h3>
+                                <p>Providing essential meals to flood-affected families across Punjab villages, ensuring no one goes hungry during these challenging times.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="src/assets/shelter-assistance.jpg" alt="Temporary Shelter Setup">
+                            <div class="slide-overlay">
+                                <h3>Temporary Shelter Setup</h3>
+                                <p>Creating safe, dry spaces for displaced families while they rebuild their homes and their lives from the ground up.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="src/assets/hero-relief.jpg" alt="Medical Emergency Response">
+                            <div class="slide-overlay">
+                                <h3>Medical Emergency Response</h3>
+                                <p>Delivering critical healthcare services to remote areas, ensuring medical emergencies don't become tragedies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn carousel-prev" onclick="previousSlide()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn carousel-next" onclick="nextSlide()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <button class="indicator active" onclick="goToSlide(0)"></button>
+                    <button class="indicator" onclick="goToSlide(1)"></button>
+                    <button class="indicator" onclick="goToSlide(2)"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">How We're Helping</h2>
+            <p class="section-description">
+                Our comprehensive approach ensures that immediate needs are met while building foundation for long-term recovery and resilience.
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+                            <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+                            <path d="M12 3v6"/>
+                        </svg>
+                    </div>
+                    <h3>Emergency Food Relief</h3>
+                    <p>Distributing essential food packages to families who have lost everything, ensuring proper nutrition during crisis.</p>
+                    <div class="service-stats">
+                        <span class="stat-highlight">5,000+ meals served daily</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 21h18"/>
+                            <path d="M5 21V7l8-4v18"/>
+                            <path d="M19 21V11l-6-4"/>
+                        </svg>
+                    </div>
+                    <h3>Temporary Shelter</h3>
+                    <p>Providing safe, dry accommodation for displaced families until permanent housing solutions can be arranged.</p>
+                    <div class="service-stats">
+                        <span class="stat-highlight">200+ families sheltered</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z"/>
+                            <path d="M12 5L8 21l4-7 4 7-4-16"/>
+                        </svg>
+                    </div>
+                    <h3>Medical Care</h3>
+                    <p>Mobile health units and emergency medical services reaching the most affected areas with critical healthcare.</p>
+                    <div class="service-stats">
+                        <span class="stat-highlight">1,500+ patients treated</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Emergency Supplies</h3>
+                    <p>Clean water, clothing, hygiene kits, and essential supplies distributed to affected communities.</p>
+                    <div class="service-stats">
+                        <span class="stat-highlight">10,000+ supply kits distributed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3>Your Donation Makes Real Impact</h3>
+                <div class="donation-impact">
+                    <div class="impact-item">
+                        <span class="amount">₹500</span>
+                        <span class="impact">Feeds a family for 3 days</span>
+                    </div>
+                    <div class="impact-item">
+                        <span class="amount">₹1,500</span>
+                        <span class="impact">Emergency shelter for a week</span>
+                    </div>
+                    <div class="impact-item">
+                        <span class="amount">₹3,000</span>
+                        <span class="impact">Complete relief package</span>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn-primary">Start Helping Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <h2 class="section-title">Our Commitment to Rebuilding Lives</h2>
+            <p class="section-description">
+                Every statistic represents a life touched, a family supported, and a step towards recovery. 
+                Our transparent approach ensures your contribution creates maximum impact where it's needed most.
+            </p>
+
+            <div class="impact-stats">
+                <div class="impact-card">
+                    <div class="impact-number">2,500+</div>
+                    <div class="impact-label">Families Directly Helped</div>
+                    <div class="impact-description">Comprehensive support including food, shelter, and medical care</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">15</div>
+                    <div class="impact-label">Villages Covered</div>
+                    <div class="impact-description">Reaching remote and severely affected areas across Punjab</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">50,000+</div>
+                    <div class="impact-label">Meals Served</div>
+                    <div class="impact-description">Nutritious meals ensuring no one goes hungry during crisis</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">₹2.5M</div>
+                    <div class="impact-label">Relief Distributed</div>
+                    <div class="impact-description">Direct aid and resources provided to affected communities</div>
+                </div>
+            </div>
+
+            <div class="approach-section">
+                <h3>Our Approach</h3>
+                <div class="approach-grid">
+                    <div class="approach-item">
+                        <div class="approach-icon">🎯</div>
+                        <h4>Targeted Response</h4>
+                        <p>Ground assessment teams identify the most urgent needs and allocate resources accordingly.</p>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">🤝</div>
+                        <h4>Community Partnership</h4>
+                        <p>Working with local leaders and volunteers to ensure culturally sensitive and effective aid.</p>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">📊</div>
+                        <h4>Transparent Operations</h4>
+                        <p>Regular updates and detailed reporting on how every rupee is used for maximum impact.</p>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">🔄</div>
+                        <h4>Sustainable Recovery</h4>
+                        <p>Beyond immediate relief, focusing on long-term rehabilitation and community resilience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="stories-section">
+        <div class="container">
+            <h2 class="section-title">Stories from the Ground</h2>
+            <p class="section-description">
+                Behind every statistic is a human story. These are the faces of resilience, hope, and the unwavering 
+                human spirit that continues to inspire our mission every single day.
+            </p>
+
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="src/assets/relief-recipients-1.jpg" alt="Families Finding Hope">
+                        <div class="story-overlay">
+                            <div class="impact-badge">Food relief for 2 weeks</div>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h3>Families Finding Hope</h3>
+                        <p>Meet the Sharma family from Jalandhar, who lost everything in the floods but found hope through our emergency food relief program. With your support, they're rebuilding their lives one day at a time.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="src/assets/relief-recipients-2.jpg" alt="Safe Haven for Children">
+                        <div class="story-overlay">
+                            <div class="impact-badge">Shelter for 50+ families</div>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h3>Safe Haven for Children</h3>
+                        <p>These children from flood-affected villages now have a safe, dry place to stay. Our temporary shelters provide not just protection, but a sense of community and hope for better days ahead.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="src/assets/relief-recipients-3.jpg" alt="Healthcare When Needed Most">
+                        <div class="story-overlay">
+                            <div class="impact-badge">Medical care for 200+ patients</div>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <h3>Healthcare When Needed Most</h3>
+                        <p>Elderly residents receiving critical medical care through our mobile health units. In times of crisis, quality healthcare becomes a lifeline, and we ensure no one is left without care.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stories-cta">
+                <h3>Be Part of Their Story</h3>
+                <p>Every donation, every share, every act of kindness becomes part of these stories of hope and recovery. Join us in writing the next chapter of rebuilding and restoration.</p>
+                <div class="stories-buttons">
+                    <a href="donate.html" class="btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        Help Now
+                    </a>
+                    <button class="btn-secondary">Share Our Mission</button>
+                </div>
+                <p class="quote">"In every act of kindness, we plant seeds of hope that will grow into forests of change." - PunarNirman Trust</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Dedicated Team</h2>
+            <p class="section-description">
+                Our passionate team of volunteers, coordinators, and field workers are the backbone of our relief operations, 
+                working tirelessly to ensure help reaches those who need it most.
+            </p>
+
+            <div class="team-photo">
+                <img src="src/assets/team-photo.jpg" alt="PunarNirman Trust Team">
+                <div class="team-overlay">
+                    <h3>"Together, we are stronger than any disaster."</h3>
+                    <p>Our united team working around the clock to bring hope and relief to flood-affected communities across Punjab.</p>
+                </div>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">RS</div>
+                    <h3>Rajesh Singh</h3>
+                    <div class="member-role">Operations Director</div>
+                    <p>Leading ground operations with 15+ years in disaster management and community development.</p>
+                    <div class="member-expertise">Emergency Response • Team Leadership • Community Outreach</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">PK</div>
+                    <h3>Priya Kaur</h3>
+                    <div class="member-role">Medical Coordinator</div>
+                    <p>Ensuring healthcare reaches every corner. Former nurse with specialization in emergency medical services.</p>
+                    <div class="member-expertise">Emergency Medicine • Health Coordination • Rural Healthcare</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">AS</div>
+                    <h3>Amarjeet Singh</h3>
+                    <div class="member-role">Logistics Manager</div>
+                    <p>Managing supply chains and distribution networks to ensure efficient delivery of relief materials.</p>
+                    <div class="member-expertise">Supply Chain • Distribution • Resource Management</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">SK</div>
+                    <h3>Simran Kaur</h3>
+                    <div class="member-role">Community Liaison</div>
+                    <p>Building bridges between relief efforts and communities, ensuring culturally sensitive support.</p>
+                    <div class="member-expertise">Community Relations • Cultural Sensitivity • Local Partnerships</div>
+                </div>
+            </div>
+
+            <div class="volunteer-cta">
+                <h3>Join Our Mission</h3>
+                <p>Be part of the change. Whether you can volunteer time, skills, or resources, every contribution helps us reach more families in need.</p>
+                <div class="volunteer-stats">
+                    <span>100+ Active Volunteers</span>
+                    <span>24/7 Operations</span>
+                    <span>15+ Areas Covered</span>
+                </div>
+                <button class="btn-primary">Become a Volunteer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="emergency-banner">
+            <div class="container">
+                <div class="emergency-content">
+                    <div class="emergency-icon">🚨</div>
+                    <div class="emergency-text">
+                        <strong>Emergency Helpline:</strong> +91-9876543210 (24/7 Available)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <div class="logo-icon">
+                                <svg class="heart-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </div>
+                            <div class="logo-text">
+                                <h3>PunarNirman Trust</h3>
+                                <p>Punjab Flood Relief</p>
+                            </div>
+                        </div>
+                        <p>Rebuilding lives and restoring hope in flood-affected communities across Punjab. Every act of kindness creates ripples of positive change.</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#services">Our Work</a></li>
+                            <li><a href="#team">Our Team</a></li>
+                            <li><a href="donate.html">Donate Now</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>Jalandhar, Punjab, India</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <span>+91-9876543210</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <span>help@punarnirmantrust.org</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.222.085.343-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p>&copy; 2024 PunarNirman Trust. All rights reserved.</p>
+                        <div class="footer-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Financial Transparency</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - PunarNirman Trust | Punjab Flood Relief</title>
+    <meta name="description" content="Support Punjab flood relief efforts. Donate securely via UPI, bank transfer, or QR code to help families rebuild their lives.">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="index-static.html" class="logo">
+                    <div class="logo-icon">
+                        <svg class="heart-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>PunarNirman Trust</h1>
+                        <p>Punjab Flood Relief</p>
+                    </div>
+                </a>
+
+                <div class="nav-links desktop-nav">
+                    <a href="index-static.html" class="nav-link">Home</a>
+                    <a href="index-static.html#services" class="nav-link">Our Work</a>
+                    <a href="index-static.html#team" class="nav-link">Team</a>
+                    <a href="index-static.html#contact" class="nav-link">Contact</a>
+                    <a href="#" class="donate-btn active">Donate Now</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index-static.html" class="mobile-nav-link">Home</a>
+                <a href="index-static.html#services" class="mobile-nav-link">Our Work</a>
+                <a href="index-static.html#team" class="mobile-nav-link">Team</a>
+                <a href="index-static.html#contact" class="mobile-nav-link">Contact</a>
+                <a href="#" class="mobile-donate-btn active">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Donation Hero -->
+    <section class="donate-hero">
+        <div class="container">
+            <div class="donate-hero-content">
+                <h1>Make a Difference Today</h1>
+                <p>Your contribution directly impacts flood-affected families in Punjab. Every rupee counts in rebuilding lives and restoring hope.</p>
+                
+                <div class="urgency-indicator">
+                    <div class="urgency-icon">⚡</div>
+                    <div class="urgency-text">
+                        <strong>Urgent Need:</strong> 500+ families still waiting for relief
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Form Section -->
+    <section class="donation-section">
+        <div class="container">
+            <div class="donation-grid">
+                <!-- Quick Amount Selection -->
+                <div class="donation-card">
+                    <h2>Choose Your Impact</h2>
+                    <p>Select an amount below or enter a custom donation amount</p>
+                    
+                    <div class="amount-options">
+                        <button class="amount-btn" onclick="selectAmount(500)" data-amount="500">
+                            <span class="amount">₹500</span>
+                            <span class="impact">3 days food for a family</span>
+                        </button>
+                        <button class="amount-btn" onclick="selectAmount(1500)" data-amount="1500">
+                            <span class="amount">₹1,500</span>
+                            <span class="impact">Emergency shelter for a week</span>
+                        </button>
+                        <button class="amount-btn" onclick="selectAmount(3000)" data-amount="3000">
+                            <span class="amount">₹3,000</span>
+                            <span class="impact">Complete relief package</span>
+                        </button>
+                        <button class="amount-btn" onclick="selectAmount(5000)" data-amount="5000">
+                            <span class="amount">₹5,000</span>
+                            <span class="impact">Medical care for 10 people</span>
+                        </button>
+                    </div>
+
+                    <div class="custom-amount">
+                        <label for="customAmount">Custom Amount</label>
+                        <div class="input-group">
+                            <span class="currency">₹</span>
+                            <input type="number" id="customAmount" placeholder="Enter amount" min="100" onchange="updateDonationAmount(this.value)">
+                        </div>
+                    </div>
+
+                    <div class="selected-impact" id="selectedImpact">
+                        <div class="impact-text">Your donation of <span id="donationAmount">₹500</span> will provide <span id="impactDescription">3 days food for a family</span></div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="donation-card">
+                    <h2>Payment Methods</h2>
+                    
+                    <div class="payment-tabs">
+                        <button class="payment-tab active" onclick="showPaymentMethod('upi')" data-method="upi">UPI Payment</button>
+                        <button class="payment-tab" onclick="showPaymentMethod('bank')" data-method="bank">Bank Transfer</button>
+                        <button class="payment-tab" onclick="showPaymentMethod('qr')" data-method="qr">QR Code</button>
+                    </div>
+
+                    <!-- UPI Payment -->
+                    <div class="payment-content active" id="upi-payment">
+                        <div class="payment-header">
+                            <h3>UPI Payment</h3>
+                            <p>Instant and secure payment via UPI</p>
+                        </div>
+                        
+                        <div class="upi-options">
+                            <button class="upi-btn" onclick="payWithUPI('gpay')">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzQyODVGNCIvPgo8cGF0aCBkPSJNMTIgMTZIMjhWMjRIMTJWMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Google Pay">
+                                <span>Google Pay</span>
+                            </button>
+                            <button class="upi-btn" onclick="payWithUPI('phonepe')">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzVGMjU5RiIvPgo8cGF0aCBkPSJNMTIgMTZIMjhWMjRIMTJWMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="PhonePe">
+                                <span>PhonePe</span>
+                            </button>
+                            <button class="upi-btn" onclick="payWithUPI('paytm')">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzAwQjlGMSIvPgo8cGF0aCBkPSJNMTIgMTZIMjhWMjRIMTJWMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Paytm">
+                                <span>Paytm</span>
+                            </button>
+                        </div>
+
+                        <div class="upi-manual">
+                            <label for="upiId">Or enter UPI ID manually:</label>
+                            <div class="input-group">
+                                <input type="text" id="upiId" placeholder="example@upi" value="punarnirman@upi">
+                                <button class="copy-btn" onclick="copyUPI()">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bank Transfer -->
+                    <div class="payment-content" id="bank-payment">
+                        <div class="payment-header">
+                            <h3>Bank Transfer</h3>
+                            <p>Direct bank transfer details</p>
+                        </div>
+                        
+                        <div class="bank-details">
+                            <div class="bank-item">
+                                <label>Account Name:</label>
+                                <div class="bank-value">
+                                    <span>PunarNirman Trust</span>
+                                    <button class="copy-btn" onclick="copyText('PunarNirman Trust')">Copy</button>
+                                </div>
+                            </div>
+                            <div class="bank-item">
+                                <label>Account Number:</label>
+                                <div class="bank-value">
+                                    <span>1234567890123456</span>
+                                    <button class="copy-btn" onclick="copyText('1234567890123456')">Copy</button>
+                                </div>
+                            </div>
+                            <div class="bank-item">
+                                <label>IFSC Code:</label>
+                                <div class="bank-value">
+                                    <span>PUNB0123456</span>
+                                    <button class="copy-btn" onclick="copyText('PUNB0123456')">Copy</button>
+                                </div>
+                            </div>
+                            <div class="bank-item">
+                                <label>Bank Name:</label>
+                                <div class="bank-value">
+                                    <span>Punjab National Bank</span>
+                                    <button class="copy-btn" onclick="copyText('Punjab National Bank')">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QR Code Payment -->
+                    <div class="payment-content" id="qr-payment">
+                        <div class="payment-header">
+                            <h3>QR Code Payment</h3>
+                            <p>Scan to pay instantly</p>
+                        </div>
+                        
+                        <div class="qr-container">
+                            <div class="qr-code">
+                                <img src="src/assets/qr-payment.jpg" alt="QR Code for Payment">
+                            </div>
+                            <p class="qr-instructions">
+                                Scan this QR code with any UPI app to make your donation
+                            </p>
+                            <div class="qr-amount" id="qrAmount">Amount: ₹500</div>
+                        </div>
+                    </div>
+
+                    <button class="donate-btn-large" onclick="processDonation()">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        Complete Donation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="trust-section">
+                <h3>Why Donate With Us?</h3>
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">🔒</div>
+                        <h4>100% Secure</h4>
+                        <p>Bank-level encryption and secure payment processing</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">📊</div>
+                        <h4>Full Transparency</h4>
+                        <p>Track exactly how your donation is being used</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">⚡</div>
+                        <h4>Direct Impact</h4>
+                        <p>Funds reach beneficiaries within 24-48 hours</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">📱</div>
+                        <h4>Instant Receipt</h4>
+                        <p>Get donation receipt and tax benefits immediately</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Donations -->
+            <div class="recent-donations">
+                <h3>Recent Support</h3>
+                <div class="donations-list">
+                    <div class="donation-item">
+                        <div class="donor-avatar">A</div>
+                        <div class="donation-info">
+                            <div class="donor-name">Anonymous</div>
+                            <div class="donation-amount">₹5,000</div>
+                        </div>
+                        <div class="donation-time">2 minutes ago</div>
+                    </div>
+                    <div class="donation-item">
+                        <div class="donor-avatar">R</div>
+                        <div class="donation-info">
+                            <div class="donor-name">Ravi S.</div>
+                            <div class="donation-amount">₹1,500</div>
+                        </div>
+                        <div class="donation-time">5 minutes ago</div>
+                    </div>
+                    <div class="donation-item">
+                        <div class="donor-avatar">P</div>
+                        <div class="donation-info">
+                            <div class="donor-name">Priya K.</div>
+                            <div class="donation-amount">₹3,000</div>
+                        </div>
+                        <div class="donation-time">8 minutes ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="emergency-banner">
+            <div class="container">
+                <div class="emergency-content">
+                    <div class="emergency-icon">🚨</div>
+                    <div class="emergency-text">
+                        <strong>Emergency Helpline:</strong> +91-9876543210 (24/7 Available)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <div class="logo-icon">
+                                <svg class="heart-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </div>
+                            <div class="logo-text">
+                                <h3>PunarNirman Trust</h3>
+                                <p>Punjab Flood Relief</p>
+                            </div>
+                        </div>
+                        <p>Rebuilding lives and restoring hope in flood-affected communities across Punjab.</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index-static.html">Home</a></li>
+                            <li><a href="index-static.html#services">Our Work</a></li>
+                            <li><a href="index-static.html#team">Our Team</a></li>
+                            <li><a href="#">Donate Now</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>Jalandhar, Punjab, India</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <span>+91-9876543210</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <span>help@punarnirmantrust.org</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p>&copy; 2024 PunarNirman Trust. All rights reserved.</p>
+                        <div class="footer-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Financial Transparency</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
